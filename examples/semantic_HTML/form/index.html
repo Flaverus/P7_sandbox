@@ -28,7 +28,8 @@
         <legend>Basic Information</legend>
 
         <label for="title">Recipe Title:</label>
-        <input type="text" id="title" name="title" required>
+        <input type="text" id="title" name="title" pattern="[A-Za-z0-9]{3,50}"
+               title="Title must be 3–50 characters long and contain only letters and numbers." required>
 
         <label for="description">Description:</label>
         <textarea id="description" name="description" rows="4" required></textarea>
@@ -80,7 +81,7 @@
         </div>
       </fieldset>
 
-      <button type="submit">Submit Recipe</button>
+      <button type="submit" onclick="this.closest('form').classList.add('submitted');">Submit Recipe</button>
     </form>
   </section>
 </main>
@@ -95,7 +96,7 @@
   document.querySelector('form').addEventListener('submit', function(e) {
     e.preventDefault();
 
-    const form = e.target;
+
     const data = {
       title: form.title.value,
       description: form.description.value,

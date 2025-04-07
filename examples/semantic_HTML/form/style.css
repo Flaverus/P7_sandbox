@@ -125,6 +125,12 @@ select:focus {
     outline: none;
 }
 
+.submitted input:invalid,
+.submitted textarea:invalid {
+    border-color: #da1919;
+    background-color: #ffeeee;
+}
+
 textarea {
     resize: vertical;
     min-height: 120px;
