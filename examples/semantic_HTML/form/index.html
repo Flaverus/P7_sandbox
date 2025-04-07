@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Submit your favorite recipe in an accessible way">
+  <title>Submit Recipe - The Foodie's Corner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>The Foodie's Corner</h1>
+  <nav>
+    <ul>
+      <li><a href="#main-content" class="skip-link">Skip to Main Content</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main-content">
+  <section>
+    <h2>Share Your Recipe</h2>
+    <p>Fill out the form below to submit your favorite dish to our community.</p>
+
+    <form action="/submit-recipe" method="post" enctype="multipart/form-data">
+      <fieldset>
+        <legend>Basic Information</legend>
+
+        <label for="title">Recipe Title:</label>
+        <input type="text" id="title" name="title" required>
+
+        <label for="description">Description:</label>
+        <textarea id="description" name="description" rows="4" required></textarea>
+
+        <label for="image">Upload Image:</label>
+        <input type="file" id="image" name="image" accept="image/*">
+      </fieldset>
+
+      <fieldset>
+        <legend>Recipe Details</legend>
+
+        <label for="cuisine">Cuisine Type:</label>
+        <select id="cuisine" name="quisine">
+          <option value="italian">Italian</option>
+          <option value="mexican">Mexican</option>
+          <option value="indian">Indian</option>
+          <option value="japanese">Japanese</option>
+          <option value="french">French</option>
+        </select>
+
+        <label for="time">Preparation Time (minutes):</label>
+        <input type="number" id="time" name="prep-time" min="0" required>
+
+        <label for="servings">Servings:</label>
+        <input type="number" id="servings" name="servings" min="1">
+      </fieldset>
+
+      <fieldset>
+        <legend>Allergy Information</legend>
+
+        <div>
+          <input type="checkbox" id="nuts" name="allergies" value="nuts">
+          <label for="nuts">Contains Nuts</label>
+        </div>
+
+        <div>
+          <input type="checkbox" id="gluten" name="allergies" value="gluten">
+          <label for="gluten">Contains Gluten</label>
+        </div>
+
+        <div>
+          <input type="checkbox" id="dairy" name="allergies" value="dairy">
+          <label for="dairy">Contains Dairy</label>
+        </div>
+
+        <div>
+          <input type="checkbox" id="soy" name="allergies" value="soy">
+          <label for="soy">Contains Soy</label>
+        </div>
+      </fieldset>
+
+      <button type="submit">Submit Recipe</button>
+    </form>
+  </section>
+</main>
+
+<footer>
+  <h2 id="contact">Contact Us</h2>
+  <p>Email: <a href="mailto:info@foodiescorner.com">info@foodiescorner.com</a></p>
+  <p>Follow us on <a href="#">Instagram</a> & <a href="#">Twitter</a></p>
+</footer>
+
+<script>
+  document.querySelector('form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const data = {
+      title: form.title.value,
+      description: form.description.value,
+      cuisine: form.cuisine.value,
+      prepTime: form.time.value,
+      servings: form.servings.value,
+      allergies: Array.from(form.querySelectorAll('input[name="allergies"]:checked')).map(cb => cb.value)
+    };
+
+    alert(
+      `Recipe Title: ${data.title}\n` +
+      `Description: ${data.description}\n` +
+      `Cuisine: ${data.cuisine}\n` +
+      `Prep Time: ${data.prepTime} minutes\n` +
+      `Servings: ${data.servings}\n` +
+      `Allergies: ${data.allergies.join(', ') || 'None'}`
+    );
+  });
+</script>
+</body>
+</html>
