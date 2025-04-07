@@ -71,8 +71,8 @@ section {
     margin-bottom: 2rem;
 }
 
-/* Article styling */
-article {
+/* section styling */
+section.card {
     background-color: #fff;
     padding: 1rem;
     margin-bottom: 1rem;

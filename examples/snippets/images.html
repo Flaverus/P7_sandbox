@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accessible Images Example</title>
+  <style>
+      body {
+          font-family: sans-serif;
+          padding: 2rem;
+      }
+
+      img {
+          display: flex;
+          max-width: 150px;
+          height: auto;
+          margin: 12px auto;
+      }
+
+      a {
+          text-decoration: none;
+      }
+  </style>
+</head>
+<body>
+<main>
+
+  <!-- Decorative image (not announced by screen readers) -->
+  <img src="../../assets/images/decorative-icon.png" alt="">
+
+  <img src="../../assets/images/landscape.png" alt="A wide view of Iguazu Falls surrounded by lush green jungle, with multiple waterfalls cascading into a river under a blue sky.">
+
+  <!-- Logo linking to home page, announced as "Link, Image, Home Page" -->
+  <a href="https://webengineering-fhnw.github.io/Kolibri/">
+    <img src="../../assets/images/logo.png" alt="Home Page">
+  </a>
+
+  <!-- Celebrity image linking to Wikipedia, announced as "Link, Image, Matthew Perry" -->
+  <a href="https://en.wikipedia.org/wiki/Matthew_Perry">
+    <img src="../../assets/images/matthew-perry.png" alt="Matthew Perry">
+  </a>
+</main>
+</body>
+</html>
