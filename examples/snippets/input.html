@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Submit your favorite recipe in an accessible way">
+  <title>Input example</title>
+  <style>
+      input,
+      select,
+      textarea {
+          width: calc(100% - 20px);
+          padding: 10px;
+          border: 1px solid #ccc;
+          border-radius: 6px;
+          background-color: #fafafa;
+          font: inherit;
+          cursor: pointer;
+      }
+
+      select {
+          width: 100%;
+      }
+
+      input:focus,
+      textarea:focus,
+      select:focus {
+          border-color: #1c5ee7;
+          background-color: #fff;
+          outline: none;
+      }
+
+      input[type="submit"],
+      input[type="image"]{
+          display: flex;
+          margin: auto;
+          background-color: #4CAF50;
+          color: white;
+          padding: 0.75rem 1.5rem;
+          border: none;
+          border-radius: 6px;
+          font-size: 1rem;
+          cursor: pointer;
+          transition: background-color 0.2s ease;
+      }
+
+      input[type="submit"]:hover,
+      input[type="image"]:hover{
+          background-color: #45a049;
+      }
+
+      input[type="reset"] {
+          background-color: #da1919;
+      }
+
+      input[type="reset"] {
+          background-color: #c11717;
+      }
+  </style>
+</head>
+<body>
+
+<main >
+  <form action="/submit" method="post" enctype="form-data">
+
+    <label for="text">Type Text:</label>
+    <input type="text" id="text" name="text">
+
+    <label for="checkbox">Type Checkbox:</label>
+    <input type="checkbox" id="checkbox" name="checkbox">
+
+    <label for="color">Type Color:</label>
+    <input type="color" id="color" name="color">
+
+    <label for="date">Type Date:</label>
+    <input type="date" id="date" name="date">
+
+    <label for="datetime-local">Type Datetime-Local:</label>
+    <input type="datetime-local" id="datetime-local" name="datetime-local">
+
+    <label for="email">Type Email:</label>
+    <input type="email" id="email" name="email">
+
+    <label for="file">Type File:</label>
+    <input type="file" id="file" name="file">
+
+    <label for="hidden">Type Hidden:</label>
+    <input type="hidden" id="hidden" name="hidden" value="hidden">
+
+    <label for="month">Type Month:</label>
+    <input type="month" id="month" name="month">
+
+    <label for="number">Type Number:</label>
+    <input type="number" id="number" name="number">
+
+    <label for="password">Type Password:</label>
+    <input type="password" id="password" name="password">
+
+    <label for="radio">Type Radio:</label>
+    <input type="radio" id="radio" name="radio">
+
+    <label for="range">Type Range:</label>
+    <input type="range" id="range" name="range">
+
+    <label for="search">Type Search:</label>
+    <input type="search" id="search" name="search">
+
+    <label for="tel">Type Tel:</label>
+    <input type="tel" id="tel" name="tel">
+
+    <label for="time">Type Time:</label>
+    <input type="time" id="time" name="time">
+
+    <label for="url">Type Url:</label>
+    <input type="url" id="url" name="url">
+
+    <label for="week">Type Week:</label>
+    <input type="week" id="week" name="week">
+
+    <label for="reset">Type Reset:</label>
+    <input type="reset" id="reset" name="reset">
+
+    <label for="image">Type Image:</label>
+    <input type="image" id="image" name="image">
+
+    <label for="submit">Type Submit:</label>
+    <input type="submit" id="submit" name="submit">
+  </form>
+</main>
+
+</body>
+</html>
