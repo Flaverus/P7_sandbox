@@ -4,45 +4,48 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Accessible Images Example</title>
+  <link rel="stylesheet" href="../../../style.css">
   <style>
-      body {
-          font-family: sans-serif;
-          padding: 2rem;
+      p {
+          margin: auto;
+          width: fit-content;
       }
 
       img {
           display: flex;
           max-width: 150px;
           height: auto;
-          margin: 12px auto;
-      }
-
-      a {
-          text-decoration: none;
+          margin: 12px auto 24px;
       }
 
       .background-image {
           width: 150px;
           height: 150px;
           display: flex;
-          margin: auto;
+          margin: 12px auto 24px;
           background-image: url("../../assets/images/landscape.png");
       }
   </style>
 </head>
 <body>
 <main>
+  <h1>Collection of Image Examples</h1>
 
+  <p>Image set as background with CSS</p>
   <div class="background-image"></div>
 
+  <p>Decorative image with alt=""</p>
   <img src="../../assets/images/decorative-icon.png" alt="">
 
+  <p>Image with a descriptive alt text</p>
   <img src="../../assets/images/landscape.png" alt="A wide view of Iguazu Falls surrounded by lush green jungle, with multiple waterfalls cascading into a river under a blue sky.">
 
+  <p>Logo image linking to the home page</p>
   <a href="https://webengineering-fhnw.github.io/Kolibri/">
     <img src="../../assets/images/logo.png" alt="Home Page">
   </a>
 
+  <p>Image linking to the Wikipedia entry of Matthew Perry</p>
   <a href="https://en.wikipedia.org/wiki/Matthew_Perry">
     <img src="../../assets/images/matthew-perry.png" alt="Matthew Perry">
   </a>

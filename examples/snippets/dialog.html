@@ -4,66 +4,21 @@
   <meta charset="UTF-8" />
   <title>Dialog Example</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-  <style>
-      body {
-          font-family: 'Roboto', sans-serif;
-          background-color: #f5f5f5;
-      }
-
-      button {
-          display: flex;
-          margin: 24px auto;
-          background-color: #4CAF50;
-          color: white;
-          padding: 0.75rem 1.5rem;
-          border: none;
-          border-radius: 6px;
-          font-size: 1rem;
-          cursor: pointer;
-          font-family: inherit;
-      }
-
-      button:hover {
-          background-color: #45a049;
-      }
-
-      dialog {
-          padding: 2.5rem;
-          background-color: #f9f9f9;
-          border: none;
-          border-radius: 4px;
-          box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-          width: fit-content;
-          font-size: 1rem;
-          line-height: 1.4;
-      }
-
-      dialog::backdrop {
-          background: rgba(0, 0, 0, 0.3);
-      }
-
-      dialog button {
-          margin-top: 1rem;
-          background-color: #da1919;
-      }
-
-      dialog button:hover {
-          background-color: #c11717;
-      }
-  </style>
+  <link rel="stylesheet" href="../../../style.css">
 </head>
 <body>
 <main>
+  <h1>Modal Example with Dialog</h1>
+
   <dialog>
-    <button autofocus>Close</button>
+    <button autofocus class="cancel">Close</button>
     <p>It is this easy to create an accessible modal, who would have thought?</p>
   </dialog>
   <button>Show the dialog</button>
 </main>
 <script>
-  const dialog = document.querySelector("dialog");
-  const showButton = document.querySelector("dialog + button");
+  const dialog      = document.querySelector("dialog");
+  const showButton  = document.querySelector("dialog + button");
   const closeButton = document.querySelector("dialog button");
 
   // "Show the dialog" button opens the dialog modally
