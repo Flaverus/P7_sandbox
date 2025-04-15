@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-US" class="simulate-deuteranopia">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Output Example</title>
+  <link rel="stylesheet" href="../../../style.css">
+  </style>
+</head>
+<body>
+<main>
+  <h1>Output Example</h1>
+
+  <section class="card">
+    <h2>Calculating the sum of two numbers</h2>
+
+    <label for="num1">First summand:</label>
+    <input type="number" id="num1" oninput="updateOutput()" value="0">
+
+    <label for="num2">Second summand:</label>
+    <input type="number" id="num2" oninput="updateOutput()" value="0">
+
+    <label for="result">Total:</label>
+    <output id="result" for="num1 num2">0</output>
+  </section>
+
+
+
+  <script>
+    function updateOutput() {
+      const val1 = parseFloat(document.getElementById('num1').value) || 0;
+      const val2 = parseFloat(document.getElementById('num2').value) || 0;
+      document.getElementById('result').value = val1 + val2;
+    }
+  </script>
+</main>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meter and Progress Example</title>
+  <link rel="stylesheet" href="../../../style.css">
+</head>
+<body>
+<main>
+  <h1>Examples of the Meter and Progress Element</h1>
+
+  <section class="card">
+    <h2>Meter</h2>
+
+    <label for="fuel">Fuel level</label>
+    <meter id="fuel" min="0" max="100" low="33" high="70" optimum="80" value="50">
+      50%
+    </meter>
+  </section>
+
+  <section class="card">
+    <h2>Determinate Progress</h2>
+
+    <label for="progress-determinate">Downloading Document</label>
+    <progress id="progress-determinate" value="70" max="100">70 %</progress>
+  </section>
+
+  <section class="card">
+    <h2>Indeterminate Progress</h2>
+
+    <label for="progress-indeterminate">Uploading Document</label>
+    <progress id="progress-indeterminate">Loading...</progress>
+  </section>
+
+</main>
+</body>
+</html>
