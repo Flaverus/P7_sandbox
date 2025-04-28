@@ -14,5 +14,5 @@ javascript:(function(){
   var tritanopiaFilter = document.getElementById('tritanopia-filter');
   if (tritanopiaFilter) tritanopiaFilter.remove();
 
-  document.documentElement.style.filter = '';
+  document.body.style.filter = '';
 })();
