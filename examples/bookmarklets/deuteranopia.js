@@ -5,7 +5,7 @@ javascript:(function(){
     svg.setAttribute('xmlns','http://www.w3.org/2000/svg');
     svg.setAttribute('version','1.1');
     svg.setAttribute('height','0');
-    svg.innerHTML = '<defs><filter id="protanopia"><feColorMatrix type="matrix" values="0.567 0.433 0 0 0 0.558 0.442 0 0 0 0 0.242 0.758 0 0 0 0 0 1 0"/></filter></defs>';
+    svg.innerHTML = '<defs><filter id="protanopia"><feColorMatrix type="matrix" values="0.367 0.861 -0.228 0 0 0.28 0.673 0.047 0 0 -0.012 0.043 0.969 0 0 0 0 0 1 0"/></filter></defs>';
     document.body.appendChild(svg);
   }
   document.body.style.filter='url(#protanopia)';
