@@ -9,7 +9,7 @@ javascript:(function(){
       position: 'fixed',
       top: '0',
       left: '0',
-      zIndex: '999',
+      zIndex: '2147483647',
       backgroundColor: 'black',
       pointerEvents: 'none'
     });
