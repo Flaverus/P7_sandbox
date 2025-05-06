@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>setCustomValidation Example</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../../../style.css">
+</head>
+<body>
+<main>
+  <h1>Validation Example with setCustomValidity</h1>
+
+  <form id="myForm">
+    <label for="username">Username (must be at least 5 characters):</label>
+    <input type="text" id="username" name="username" required>
+    <button type="submit">Submit</button>
+  </form>
+
+</main>
+<script>
+  const form = document.getElementById('myForm');
+  const username = document.getElementById('username');
+
+  username.addEventListener('input', () => {
+    if (username.value.length < 5) {
+      username.setCustomValidity('Username must be at least 5 characters long.');
+    } else {
+      username.setCustomValidity('');
+    }
+  });
+
+  form.addEventListener('submit', (e) => {
+    if (!username.checkValidity()) {
+      // Force the browser to show the message
+      username.reportValidity();
+      e.preventDefault();
+    }
+  });
+</script>
+</body>
+</html>

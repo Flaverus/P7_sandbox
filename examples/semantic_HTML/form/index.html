@@ -32,7 +32,7 @@
                title="Title must be 3–50 characters long and contain only letters and numbers." required>
 
         <label for="description">Description:</label>
-        <textarea id="description" name="description" rows="4" required></textarea>
+        <textarea id="description" name="description" rows="4" title="The recipe description should not be empty." required></textarea>
 
         <label for="image">Upload Image:</label>
         <input type="file" id="image" name="image" accept="image/*">
@@ -42,7 +42,8 @@
         <legend>Recipe Details</legend>
 
         <label for="cuisine">Cuisine Type:</label>
-        <select id="cuisine" name="quisine">
+        <select id="cuisine" name="cuisine" title="Choose the cuisine for your recipe." required>
+          <option value="" disabled selected>Select a cuisine</option>
           <option value="italian">Italian</option>
           <option value="mexican">Mexican</option>
           <option value="indian">Indian</option>
