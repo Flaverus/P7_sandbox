@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Submit your favorite recipe in an accessible way">
+  <title>Input example</title>
+  <link rel="stylesheet" href="../../../style.css">
+  <style>
+    input[type="image"] {
+        max-height: 1.6rem;
+    }
+
+    input[type="image"],
+    input[type="submit"],
+    input[type="reset"] {
+        width: auto;
+        margin: unset;
+    }
+  </style>
+</head>
+<body>
+
+<main>
+  <h1>Examples for all input types</h1>
+
+
+  <form action="/submit" method="post" enctype="form-data">
+
+    <label for="text">Type Text:</label>
+    <input placeholder="test 123" type="text" id="text" name="text">
+    <label for="asdf">Type Text:</label>
+    <input disabled placeholder="test 123" type="text" id="asdf" name="text">
+
+    <p title="this is a title">asdf</p>
+
+    <label for="submit">Type Submit:</label>
+    <input disabled type="submit" id="submit" name="submit">
+  </form>
+</main>
+
+</body>
+</html>
