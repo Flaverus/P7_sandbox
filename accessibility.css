@@ -1,0 +1,112 @@
+* {
+    outline: none;
+}
+
+/* 1. Images without alt text */
+img:not([alt]),
+img[alt=""] {
+    outline: 3px solid red !important;
+}
+img:not([alt])::after,
+img[alt=""]::after {
+    content: "⚠️ Missing alt text";
+    position: absolute;
+    background: red;
+    color: white;
+    font-size: 12px;
+    padding: 2px 4px;
+    z-index: 9999;
+}
+
+/* 2. Form inputs without associated labels */
+input:not([type="hidden"]):not([aria-label]):not([aria-labelledby]):not([id]),
+textarea:not([aria-label]):not([aria-labelledby]):not([id]),
+select:not([aria-label]):not([aria-labelledby]):not([id]) {
+    outline: 3px solid orange !important;
+}
+input:not([type="hidden"]):not([aria-label]):not([aria-labelledby]):not([id])::after,
+textarea:not([aria-label]):not([aria-labelledby]):not([id])::after,
+select:not([aria-label]):not([aria-labelledby]):not([id])::after {
+    content: "⚠️ Missing label/id";
+    position: absolute;
+    background: orange;
+    color: black;
+    font-size: 12px;
+    padding: 2px 4px;
+    z-index: 9999;
+}
+
+/* 3. Links or buttons with no accessible name */
+a:not([aria-label]):not([aria-labelledby]):empty,
+button:not([aria-label]):not([aria-labelledby]):empty {
+    outline: 3px solid fuchsia !important;
+}
+a:not([aria-label]):not([aria-labelledby]):empty::after,
+button:not([aria-label]):not([aria-labelledby]):empty::after {
+    content: "⚠️ No accessible name";
+    position: absolute;
+    background: fuchsia;
+    color: white;
+    font-size: 12px;
+    padding: 2px 4px;
+    z-index: 9999;
+}
+
+/* 4. Clickable elements (onclick or role=button) without role or tabindex */
+[onclick]:not([role]),
+[onclick]:not([tabindex]) {
+    outline: 3px dashed blue !important;
+}
+[onclick]:not([role])::after {
+    content: "⚠️ Missing role for interactive element";
+    position: absolute;
+    background: blue;
+    color: white;
+    font-size: 12px;
+    padding: 2px 4px;
+    z-index: 9999;
+}
+
+/* 5. Missing lang on html */
+html:not([lang]) {
+    outline: 5px solid crimson !important;
+}
+html:not([lang])::before {
+    content: "⚠️ Missing lang attribute on <html>";
+    display: block;
+    background: crimson;
+    color: white;
+    padding: 8px;
+    font-size: 14px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10000;
+}
+
+/* 6. aria-hidden="true" elements that are focusable */
+[aria-hidden="true"]:is(a, button, input, textarea, select) {
+    outline: 3px dotted brown !important;
+}
+[aria-hidden="true"]:is(a, button, input, textarea, select)::after {
+    content: "⚠️ Hidden from screen readers but focusable";
+    position: absolute;
+    background: brown;
+    color: white;
+    font-size: 12px;
+    padding: 2px 4px;
+    z-index: 9999;
+}
+
+/* Prevent pseudo-elements from disrupting layout too much */
+img::after,
+input::after,
+textarea::after,
+select::after,
+a::after,
+button::after {
+    position: absolute;
+    left: 0;
+}
