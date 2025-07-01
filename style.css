@@ -48,14 +48,14 @@ header h1, .header .h1 {
 }
 
 /* Navigation */
-nav ul {
+nav ul , .nav{
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
 }
 
-nav li {
+nav li, .nav div {
     margin-right: 1rem;
 }
 
@@ -74,7 +74,7 @@ section {
     margin-bottom: 2rem;
 }
 
-section.card, article, div[popover], dialog {
+section.card, div.card, article, div[popover], dialog {
     background-color: #fff;
     padding: 1rem;
     margin-bottom: 1rem;
