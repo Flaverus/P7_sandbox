@@ -35,13 +35,15 @@ body {
 
 /* Header and Footer */
 header,
-footer {
+footer,
+.footer,
+.header{
     background-color: #fff;
     padding: 1rem;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-header h1 {
+header h1, .header .h1 {
     margin: 0 0 0.5rem;
 }
 
@@ -63,7 +65,7 @@ nav a {
 }
 
 /* Main content area */
-main {
+main, #main-content {
     padding: 1rem;
 }
 
@@ -170,13 +172,15 @@ fieldset {
     margin: 0;
 }
 
-fieldset:has(div) {
+fieldset:has(div),
+.fieldset:has(.box){
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
 }
 
-fieldset > div {
+fieldset > div,
+.fieldset > .box{
     display: flex;
     align-items: center;
     padding: 0.5rem 0.75rem;
@@ -254,9 +258,92 @@ details[open] summary {
 }
 
 /* Footer text */
-footer {
+footer, .footer {
     text-align: center;
     font-size: 0.9rem;
+}
+
+/* Styling for inaccessible CTAs */
+
+.cta {
+    cursor: pointer;
+}
+
+.cta:hover {
+    opacity: 0.75;
+}
+
+.submit {
+    display: flex;
+    margin: auto;
+    width: fit-content;
+    background-color: #1c601f;
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.submit:hover {
+    background-color: #1f6822;
+}
+
+/* Styling for inaccessible headings */
+
+.h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+}
+
+.h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+}
+
+.title {
+    font-size: 1.5em;
+    font-weight: bold;
+    width: 100%;
+}
+
+.label {
+    font-size: 1.17em;
+    margin: 1em 0;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+}
+
+/* Styling for  inaccessible inputs */
+
+.bad input, .bad textarea, .bad select {
+    margin: 10px 0;
+}
+
+.bad .box input {
+    margin-right: 0.5rem;
+}
+
+.bad .box  {
+    font-size: 1.17em;
+    margin: 0;
+    font-weight: normal;
+    cursor: pointer;
 }
 
 /* Experimental visual impairment simulations */
@@ -300,3 +387,5 @@ div.blurred {
 .simulate-achromatopsia {
     filter: grayscale(100%);
 }
+
+

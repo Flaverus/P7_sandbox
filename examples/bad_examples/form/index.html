@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Form</title>
+  <link rel="stylesheet" href="../../../style.css">
+</head>
+<body>
+<div class="header">
+  <div class="h1">The Foodie's Corner</div>
+  <div>
+    <div class="cta" onclick="document.getElementById('contact').scrollIntoView()">Contact</div>
+  </div>
+</div>
+
+<div id="main-content" class="bad">
+  <div class="h2">Share Your Recipe</div>
+  <div>Fill out the form below to submit your favorite dish to our community</div>
+
+  <form>
+    <div>
+      <div class="h2">Basic Information</div>
+
+      <input placeholder="Title">
+      <textarea placeholder="Description"></textarea>
+
+      <div class="label">Image:</div>
+      <input type="file">
+    </div>
+
+    <div>
+      <div class="title">Details</div>
+
+      <div class="label">Cuisine:</div>
+      <select>
+        <option>Select</option>
+        <option>Italian</option>
+        <option>Mexican</option>
+        <option>Indian</option>
+        <option>Japanese</option>
+        <option>French</option>
+      </select>
+
+      <input placeholder="Time">
+      <input placeholder="Servings">
+    </div>
+
+    <div class="fieldset">
+      <div class="title">Allergy</div>
+
+      <div class="box">
+        <input type="checkbox">Nuts
+      </div>
+      <div class="box">
+        <input type="checkbox">Gluten
+      </div>
+      <div class="box">
+        <input type="checkbox">Dairy
+      </div>
+      <div class="box">
+        <input type="checkbox">Soy
+      </div>
+    </div>
+
+    <div class="submit" onclick="document.querySelector('form').submit()">Submit Recipe</div>
+  </form>
+</div>
+
+<div class="footer">
+  <div id="contact" class="h2">Contact Us</div>
+  <div class="cta">info@foodiescorner.com</div>
+  <div>
+    <span class="cta">Instagram</span> &
+    <span class="cta">Twitter</span>
+  </div>
+</div>
+</body>
+</html>
