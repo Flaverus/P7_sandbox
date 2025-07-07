@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Output Example</title>
+  <title>Output example</title>
   <link rel="stylesheet" href="../../../style.css">
   </style>
 </head>
@@ -27,9 +27,9 @@
 
 
   <script>
-    function updateOutput() {
-      const val1 = parseFloat(document.getElementById('num1').value) || 0;
-      const val2 = parseFloat(document.getElementById('num2').value) || 0;
+    const updateOutput = () => {
+      const val1 = Number(document.getElementById('num1').value) || 0;
+      const val2 = Number(document.getElementById('num2').value) || 0;
       document.getElementById('result').value = val1 + val2;
     }
   </script>

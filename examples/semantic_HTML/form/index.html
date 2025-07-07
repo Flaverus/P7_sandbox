@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Submit your favorite recipe in an accessible way">
-  <title>Submit Recipe - The Foodie's Corner</title>
+  <title>(Accessible) Submit Recipe - The Foodie's Corner</title>
   <link rel="stylesheet" href="../../../style.css">
 </head>
 <body>
@@ -12,7 +12,7 @@
   <h1>The Foodie's Corner</h1>
   <nav>
     <ul>
-      <li><a href="#main-content" class="skip-link">Skip to Main Content</a></li>
+      <li><a href="#main-content" class="accessibility-hidden">Skip to Main Content</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -27,21 +27,21 @@
       <fieldset>
         <legend>Basic Information</legend>
 
-        <label for="title">Recipe Title:</label>
+        <label for="title">Recipe Title</label>
         <input type="text" id="title" name="title" pattern="[A-Za-z0-9]{3,50}"
                title="Title must be 3–50 characters long and contain only letters and numbers." required>
 
-        <label for="description">Description:</label>
+        <label for="description">Description</label>
         <textarea id="description" name="description" rows="4" title="The recipe description should not be empty." required></textarea>
 
-        <label for="image">Upload Image:</label>
+        <label for="image">Upload Image</label>
         <input type="file" id="image" name="image" accept="image/*">
       </fieldset>
 
       <fieldset>
         <legend>Recipe Details</legend>
 
-        <label for="cuisine">Cuisine Type:</label>
+        <label for="cuisine">Cuisine Type</label>
         <select id="cuisine" name="cuisine" title="Choose the cuisine for your recipe." required>
           <option value="" disabled selected>Select a cuisine</option>
           <option value="italian">Italian</option>
@@ -51,10 +51,10 @@
           <option value="french">French</option>
         </select>
 
-        <label for="time">Preparation Time (minutes):</label>
+        <label for="time">Preparation Time (minutes)</label>
         <input type="number" id="time" name="prep-time" min="0" required>
 
-        <label for="servings">Servings:</label>
+        <label for="servings">Servings</label>
         <input type="number" id="servings" name="servings" min="1">
       </fieldset>
 
@@ -82,7 +82,7 @@
         </div>
       </fieldset>
 
-      <button type="submit" onclick="this.closest('form').classList.add('submitted');">Submit Recipe</button>
+      <button type="submit">Submit Recipe</button>
     </form>
   </section>
 </main>
@@ -94,8 +94,10 @@
 </footer>
 
 <script>
-  document.querySelector('form').addEventListener('submit', function(e) {
+  document.querySelector('form').addEventListener('submit', (e) => {
     e.preventDefault();
+
+    e.target.closest('form')?.classList.add('submitted');
 
 
     const data = {

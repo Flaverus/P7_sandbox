@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>setCustomValidation Example</title>
+  <title>Usage of setCustomValidity</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="../../../style.css">
 </head>
@@ -18,7 +18,7 @@
 
 </main>
 <script>
-  const form = document.getElementById('myForm');
+  const form     = document.getElementById('myForm');
   const username = document.getElementById('username');
 
   username.addEventListener('input', () => {
@@ -31,7 +31,6 @@
 
   form.addEventListener('submit', (e) => {
     if (!username.checkValidity()) {
-      // Force the browser to show the message
       username.reportValidity();
       e.preventDefault();
     }
